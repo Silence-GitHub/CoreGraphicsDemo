@@ -16,7 +16,7 @@ class GradientView: UIView {
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceRGB()
         let colorComponents: [CGFloat] = [1.0, 0.5, 0.4, 1.0,
                                           0.8, 0.8, 0.3, 1.0,
-                                          0.0, 0.0, 0.0, 1.0]
+                                          0.0, 0.7, 0.0, 1.0]
         let locations: [CGFloat] = [0.0, 0.8, 1.0]
         let gradient: CGGradient = CGGradient(colorSpace: colorSpace,
                                               colorComponents: colorComponents,
@@ -27,11 +27,20 @@ class GradientView: UIView {
                                    end: CGPoint(x: bounds.width / 2, y: bounds.height / 2),
                                    options: CGGradientDrawingOptions(rawValue: 0))
         
+        // Right bottom
         context.drawRadialGradient(gradient,
                                    startCenter: CGPoint(x: bounds.width / 2 + 50, y: bounds.height / 2 + 50),
                                    startRadius: 30,
                                    endCenter: CGPoint(x: bounds.width * 3 / 4, y: bounds.height * 3 / 4),
                                    endRadius: 20,
+                                   options: CGGradientDrawingOptions(rawValue: 0))
+        
+        // Right top
+        context.drawRadialGradient(gradient,
+                                   startCenter: CGPoint(x: bounds.width - 50, y: bounds.height / 4),
+                                   startRadius: 20,
+                                   endCenter: CGPoint(x: bounds.width - 50, y: bounds.height / 4),
+                                   endRadius: 0,
                                    options: CGGradientDrawingOptions(rawValue: 0))
     }
 
