@@ -14,6 +14,8 @@
 		4AA27EA41E56B53900A98D44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA27EA21E56B53900A98D44 /* LaunchScreen.storyboard */; };
 		4AA27EAC1E56B60A00A98D44 /* GradientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA27EAB1E56B60A00A98D44 /* GradientVC.swift */; };
 		4AA27EAE1E56B85400A98D44 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA27EAD1E56B85400A98D44 /* GradientView.swift */; };
+		4AA27EB71E586A4200A98D44 /* ShadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA27EB61E586A4200A98D44 /* ShadingView.swift */; };
+		4AA27EB91E586A5A00A98D44 /* ShadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA27EB81E586A5A00A98D44 /* ShadingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4AA27EA51E56B53900A98D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AA27EAB1E56B60A00A98D44 /* GradientVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientVC.swift; sourceTree = "<group>"; };
 		4AA27EAD1E56B85400A98D44 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		4AA27EB61E586A4200A98D44 /* ShadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadingView.swift; sourceTree = "<group>"; };
+		4AA27EB81E586A5A00A98D44 /* ShadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			children = (
 				4AA27E9B1E56B53900A98D44 /* TableViewController.swift */,
 				4AA27EAB1E56B60A00A98D44 /* GradientVC.swift */,
+				4AA27EB81E586A5A00A98D44 /* ShadingVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				4AA27EAD1E56B85400A98D44 /* GradientView.swift */,
+				4AA27EB61E586A4200A98D44 /* ShadingView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -160,8 +166,10 @@
 			files = (
 				4AA27E9C1E56B53900A98D44 /* TableViewController.swift in Sources */,
 				4AA27EAC1E56B60A00A98D44 /* GradientVC.swift in Sources */,
+				4AA27EB91E586A5A00A98D44 /* ShadingVC.swift in Sources */,
 				4AA27E9A1E56B53900A98D44 /* AppDelegate.swift in Sources */,
 				4AA27EAE1E56B85400A98D44 /* GradientView.swift in Sources */,
+				4AA27EB71E586A4200A98D44 /* ShadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
