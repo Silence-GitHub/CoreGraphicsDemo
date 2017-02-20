@@ -15,17 +15,33 @@ class ShadingView: UIView {
         
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceRGB()
         var numberOfComponents: Int = 1 + colorSpace.numberOfComponents
-        let outputRange: [CGFloat] = [1.0, 0.0, 0.0, 1.0,
-                                      0.0, 0.0, 0.0, 1.0]
+        let outputRange: [CGFloat] = [0.0, 1.0, // Red
+                                      0.0, 1.0, // Green
+                                      0.0, 1.0, // Blue
+                                      0.0, 1.0] // Alpha
         let cgFunctionEvaluateCallback: CGFunctionEvaluateCallback = { (optionalInfo, input, output) in
-            output.initialize(to: 1, count: 8)
+            let targetValues: [CGFloat] = [1.0 * input.pointee, // Red
+                                           0.0 * input.pointee, // Green
+                                           0.5 * input.pointee, // Blue
+                                           1.0] // Alpha
+            output.initialize(from: targetValues)
         }
-        var cgFunctionCallbacks: CGFunctionCallbacks = CGFunctionCallbacks(version: 0,  // just use 0
-                                                                           evaluate: cgFunctionEvaluateCallback,
-                                                                           releaseInfo: nil) // Optional release callback to release data
         
+        // Create CGFunctionCallbacks
+        // @param version: Just use 0
+        // @param evaluate: CGFunctionEvaluateCallback
+        // @param releaseInfo: Optional release callback to release data
+        var cgFunctionCallbacks: CGFunctionCallbacks = CGFunctionCallbacks(version: 0,
+                                                                           evaluate: cgFunctionEvaluateCallback,
+                                                                           releaseInfo: nil)
+        
+        // Create CGFunction
+        // @param domainDimension: Input dimension. Use 1 for Quartz 2D
+        // @param domain: Input values. Recommennd to use [0, 1], means from start to end of the gradient
+        // @param rangeDimension: Output dimension. Colors space components + 1 (alpha component)
+        // @param range: Output values. Recommend to use [0, 1, 0, 1, ...], which count = rangeDimension * 2. Each [0, 1] represents start and end value of a color space component
         let cgFunction: CGFunction = CGFunction(info: &numberOfComponents,
-                                                domainDimension: 1, // 1 for Quartz 2D
+                                                domainDimension: 1,
                                                 domain: [0, 1],
                                                 rangeDimension: numberOfComponents,
                                                 range: outputRange,
@@ -39,6 +55,36 @@ class ShadingView: UIView {
                                                 extendEnd: false)!
         
         context.drawShading(axialShading)
+        
+        // Right bottom
+        let cgFunctionEvaluateCallback2: CGFunctionEvaluateCallback = { (optionalInfo, input, output) in
+            let frequency: [CGFloat] = [5, 22, 11, 0]
+            var targetValues: [CGFloat] = []
+            for i in 0..<3 {
+                let value: CGFloat = (1 + sin(input.pointee * frequency[i])) / 2
+                targetValues.append(value)
+            }
+            targetValues.append(1)
+            output.initialize(from: targetValues)
+        }
+        var cgFunctionCallbacks2: CGFunctionCallbacks = CGFunctionCallbacks(version: 0,
+                                                                            evaluate: cgFunctionEvaluateCallback2,
+                                                                            releaseInfo: nil)
+        let cgFunction2: CGFunction = CGFunction(info: &numberOfComponents,
+                                                 domainDimension: 1,
+                                                 domain: [0, 1],
+                                                 rangeDimension: numberOfComponents,
+                                                 range: outputRange,
+                                                 callbacks: &cgFunctionCallbacks2)!
+        let radialShading: CGShading = CGShading(radialSpace: colorSpace,
+                                                 start: CGPoint(x: bounds.width / 2 + 50, y: bounds.height / 2 + 50),
+                                                 startRadius: 30,
+                                                 end: CGPoint(x: bounds.width * 3 / 4, y: bounds.height * 3 / 4),
+                                                 endRadius: 20,
+                                                 function: cgFunction2,
+                                                 extendStart: false,
+                                                 extendEnd: false)!
+        context.drawShading(radialShading)
     }
 
 }
