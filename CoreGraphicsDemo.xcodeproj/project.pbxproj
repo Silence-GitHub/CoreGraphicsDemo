@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A27A6B91E5C3E75001CD517 /* LayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27A6B81E5C3E75001CD517 /* LayerVC.swift */; };
+		4A27A6BB1E5C3E88001CD517 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27A6BA1E5C3E88001CD517 /* LayerView.swift */; };
 		4AA27E9A1E56B53900A98D44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA27E991E56B53900A98D44 /* AppDelegate.swift */; };
 		4AA27E9C1E56B53900A98D44 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA27E9B1E56B53900A98D44 /* TableViewController.swift */; };
 		4AA27E9F1E56B53900A98D44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA27E9D1E56B53900A98D44 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A27A6B81E5C3E75001CD517 /* LayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerVC.swift; sourceTree = "<group>"; };
+		4A27A6BA1E5C3E88001CD517 /* LayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
 		4AA27E961E56B53900A98D44 /* CoreGraphicsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreGraphicsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA27E991E56B53900A98D44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AA27E9B1E56B53900A98D44 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 				4AA27E9B1E56B53900A98D44 /* TableViewController.swift */,
 				4AA27EAB1E56B60A00A98D44 /* GradientVC.swift */,
 				4AA27EB81E586A5A00A98D44 /* ShadingVC.swift */,
+				4A27A6B81E5C3E75001CD517 /* LayerVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 			children = (
 				4AA27EAD1E56B85400A98D44 /* GradientView.swift */,
 				4AA27EB61E586A4200A98D44 /* ShadingView.swift */,
+				4A27A6BA1E5C3E88001CD517 /* LayerView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -164,7 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A27A6B91E5C3E75001CD517 /* LayerVC.swift in Sources */,
 				4AA27E9C1E56B53900A98D44 /* TableViewController.swift in Sources */,
+				4A27A6BB1E5C3E88001CD517 /* LayerView.swift in Sources */,
 				4AA27EAC1E56B60A00A98D44 /* GradientVC.swift in Sources */,
 				4AA27EB91E586A5A00A98D44 /* ShadingVC.swift in Sources */,
 				4AA27E9A1E56B53900A98D44 /* AppDelegate.swift in Sources */,

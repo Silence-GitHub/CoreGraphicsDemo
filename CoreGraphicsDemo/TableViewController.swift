@@ -15,11 +15,11 @@ class TableViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    private let titles: [String] = ["Gradient", "Shading"]
+    private let titles: [String] = ["Gradient", "Shading", "Layer"]
     
     private var vcs: [UIViewController] {
         get {
-            return [GradientVC(), ShadingVC()]
+            return [GradientVC(), ShadingVC(), LayerVC()]
         }
     }
     
