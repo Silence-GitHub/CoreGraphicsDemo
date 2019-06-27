@@ -24,7 +24,7 @@ class ShadingView: UIView {
                                            0.0 * input.pointee, // Green
                                            0.5 * input.pointee, // Blue
                                            1.0] // Alpha
-            output.initialize(from: targetValues)
+            output.initialize(from: targetValues, count: targetValues.count)
         }
         
         // Create CGFunctionCallbacks
@@ -65,7 +65,7 @@ class ShadingView: UIView {
                 targetValues.append(value)
             }
             targetValues.append(1)
-            output.initialize(from: targetValues)
+            output.initialize(from: targetValues, count: targetValues.count)
         }
         var cgFunctionCallbacks2: CGFunctionCallbacks = CGFunctionCallbacks(version: 0,
                                                                             evaluate: cgFunctionEvaluateCallback2,

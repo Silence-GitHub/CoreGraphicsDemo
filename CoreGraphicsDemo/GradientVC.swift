@@ -16,7 +16,7 @@ class GradientVC: UIViewController {
         title = "Gradient"
         view.backgroundColor = .groupTableViewBackground
         
-        let gradientView: GradientView = GradientView(frame: CGRect(x: 0, y: 64, width: view.bounds.width, height: 300))
+        let gradientView: GradientView = GradientView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 300))
         gradientView.backgroundColor = .white
         view.addSubview(gradientView)
     }

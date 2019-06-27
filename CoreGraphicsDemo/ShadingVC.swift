@@ -16,7 +16,7 @@ class ShadingVC: UIViewController {
         title = "Shading"
         view.backgroundColor = .groupTableViewBackground
         
-        let gradientView: ShadingView = ShadingView(frame: CGRect(x: 0, y: 64, width: view.bounds.width, height: 300))
+        let gradientView: ShadingView = ShadingView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 300))
         gradientView.backgroundColor = .white
         view.addSubview(gradientView)
     }
